@@ -9,5 +9,21 @@ function clearDisplay() {
 }
 
 function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch (e) {
+    display.value = "Error";
+  }
+}
+
+function append(value) {
+  display.value += value;
+}
+
+function clearDisplay() {
+  display.value = "";
+}
+
+function calculate() {
   display.value = eval(display.value);
 }

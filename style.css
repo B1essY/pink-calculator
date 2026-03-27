@@ -6,6 +6,8 @@ body {
   align-items: center;
   height: 100vh;
   font-family: sans-serif;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .header {
@@ -14,7 +16,7 @@ body {
 }
 
 .header h1 {
-  font-size: 36px;
+  font-size: 32px;
   color: #ff69b4;
   font-weight: bold;
   margin: 0;
@@ -25,17 +27,100 @@ body {
   backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+#display {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  border: 2px solid rgba(255, 105, 180, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  text-align: right;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 button {
   background: #ffb6c1;
   border: none;
-  padding: 15px;
-  margin: 5px;
+  padding: 20px;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  touch-action: manipulation;
+  min-height: 50px;
+  transition: all 0.2s ease;
 }
 
 button:hover {
   background: #ff69b4;
+  transform: scale(0.95);
+}
+
+button:active {
+  background: #ff1493;
+  transform: scale(0.9);
+}
+
+button.operator {
+  background: #ffb6d9;
+  font-weight: 700;
+}
+
+button.equals {
+  grid-column: span 2;
+  background: #ff69b4;
+  color: white;
+}
+
+button.equals:hover {
+  background: #ff1493;
+}
+
+button.clear {
+  grid-column: span 2;
+  background: #ffc0cb;
+}
+
+@media (max-width: 480px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 5px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .calculator {
+    padding: 15px;
+    max-width: 100%;
+  }
+  
+  button {
+    padding: 18px;
+    font-size: 18px;
+    min-height: 48px;
+  }
+  
+  #display {
+    font-size: 20px;
+    padding: 12px;
+  }
 }
